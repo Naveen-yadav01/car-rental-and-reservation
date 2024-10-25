@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Rental & Reservation System</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #495057;
+      padding: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      width: 80%;
+      margin: 30px auto;
+    }
+
+    .car-card {
+      display: flex;
+      justify-content: space-between;
+      background-color: white;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .car-card img {
+      width: 250px;
+      border-radius: 8px;
+    }
+
+    .car-info {
+      width: 60%;
+    }
+
+    .car-info h3 {
+      margin-top: 0;
+      color: #343a40;
+    }
+
+    .car-info p {
+      margin: 5px 0;
+      font-size: 1em;
+    }
+
+    .car-info .price {
+      font-size: 1.3em;
+      color: #28a745;
+      margin-top: 10px;
+    }
+
+    .btn {
+      display: block;
+      width: 150px;
+      padding: 10px;
+      text-align: center;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    form {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    form .form-group {
+      margin-bottom: 15px;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    form input, form select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ced4da;
+      border-radius: 5px;
+    }
+
+    form button {
+      width: 100%;
+      padding: 15px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2em;
+      cursor: pointer;
+    }
+
+    form button:hover {
+      background-color: #218838;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Car Rental & Reservation System</h1>
+    <p>Your trusted partner for car rentals</p>
+  </header>
+
+  <nav>
+    <a href="#cars">Available Cars</a>
+    <a href="#reservation">Make a Reservation</a>
+  </nav>
+
+  <div class="container" id="cars">
+    <h2>Available Cars</h2>
+    <div class="car-card">
+        <img src="toyota.webp" alt="Toyota Camry">
+        <div class="car-info">
+          <h3>Toyota Camry</h3>
+          <p>A comfortable sedan with excellent fuel efficiency and a smooth ride.</p>
+          <div class="features">
+            <h4>Car Features:</h4>
+            <ul>
+              <li><strong>Engine:</strong> 2.5L 4-Cylinder</li>
+              <li><strong>Transmission:</strong> Automatic</li>
+              <li><strong>Seating Capacity:</strong> 5</li>
+              <li><strong>Fuel Type:</strong> Petrol</li>
+            </ul>
+          </div>
+          <p class="price">$50 / day</p>
+          <a href="#reservation" class="btn">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card">
+        <img src="ford.jfif" alt="Ford Mustang">
+        <div class="car-info">
+          <h3>Ford Mustang</h3>
+          <p>A powerful and iconic muscle car with exhilarating performance.</p>
+          <div class="features">
+            <h4>Car Features:</h4>
+            <ul>
+              <li><strong>Engine:</strong> 5.0L V8</li>
+              <li><strong>Transmission:</strong> Manual</li>
+              <li><strong>Seating Capacity:</strong> 4</li>
+              <li><strong>Fuel Type:</strong> Petrol</li>
+            </ul>
+          </div>
+          <p class="price">$80 / day</p>
+          <a href="#reservation" class="btn">Rent Now</a>
+        </div>
+      </div>
+  
+      <div class="car-card">
+        <img src="jeep.webp" alt="Jeep Wrangler">
+        <div class="car-info">
+          <h3>Jeep Wrangler</h3>
+          <p>An off-road beast designed for adventure and exploration.</p>
+          <div class="features">
+            <h4>Car Features:</h4>
+            <ul>
+              <li><strong>Engine:</strong> 3.6L V6</li>
+              <li><strong>Transmission:</strong> Automatic</li>
+              <li><strong>Seating Capacity:</strong> 5</li>
+              <li><strong>Fuel Type:</strong> Diesel</li>
+            </ul>
+          </div>
+          <p class="price">$90 / day</p>
+          <a href="#reservation" class="btn">Rent Now</a>
+        </div>
+      </div>
+    </div>
+    
+  <div class="car-card">
+    <img src="honda civic.avif" alt="Honda Civic">
+    <div class="car-info">
+      <h3>Honda Civic</h3>
+      <p>A sleek sedan with modern features and high fuel efficiency.</p>
+      <div class="features">
+        <h4>Car Features:</h4>
+        <ul>
+          <li><strong>Engine:</strong> 1.8L I4</li>
+          <li><strong>Transmission:</strong> Automatic</li>
+          <li><strong>Seating Capacity:</strong> 5</li>
+          <li><strong>Fuel Type:</strong> Petrol</li>
+        </ul>
+      </div>
+      <p class="price">$45 / day</p>
+      <a href="#reservation" class="btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <img src="x5-facelift-exterior-right-front-three-quarter.webp" alt="BMW X5">
+    <div class="car-info">
+      <h3>BMW X5</h3>
+      <p>A luxury SUV with top-tier performance and premium comfort.</p>
+      <div class="features">
+        <h4>Car Features:</h4>
+        <ul>
+          <li><strong>Engine:</strong> 3.0L I6</li>
+          <li><strong>Transmission:</strong> Automatic</li>
+          <li><strong>Seating Capacity:</strong> 7</li>
+          <li><strong>Fuel Type:</strong> Diesel</li>
+        </ul>
+      </div>
+      <p class="price">$120 / day</p>
+      <a href="#reservation" class="btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <img src="swift.jfif" alt="Swift">
+    <div class="car-info">
+      <h3>Maruti Suzuki Swift</h3>
+      <p>A compact hatchback known for city driving and fuel efficiency.</p>
+      <div class="features">
+        <h4>Car Features:</h4>
+        <ul>
+          <li><strong>Engine:</strong> 1.2L I4</li>
+          <li><strong>Transmission:</strong> Manual</li>
+          <li><strong>Seating Capacity:</strong> 5</li>
+          <li><strong>Fuel Type:</strong> Petrol</li>
+        </ul>
+      </div>
+      <p class="price">$30 / day</p>
+      <a href="#reservation" class="btn">Rent Now</a>
+    </div>
+  </div>
+
+  <div class="car-card">
+    <img src="audi a8.avif" alt="Audi A8">
+    <div class="car-info">
+      <h3>Audi A8</h3>
+      <p>A luxury sedan designed for business and premium travel.</p>
+      <div class="features">
+        <h4>Car Features:</h4>
+        <ul>
+          <li><strong>Engine:</strong> 3.0L V6</li>
+          <li><strong>Transmission:</strong> Automatic</li>
+          <li><strong>Seating Capacity:</strong> 5</li>
+          <li><strong>Fuel Type:</strong> Petrol</li>
+        </ul>
+      </div>
+      <p class="price">$150 / day</p>
+      <a href="#reservation" class="btn">Rent Now</a>
+    </div>
+  </div>
+  <div class="container" id="reservation">
+    <h2>Make a Reservation</h2>
+
+    <form>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="car">Select Car</label>
+        <select id="car" required>
+          <option value="" disabled selected>Select a car</option>
+          <option value="Toyota Camry">Toyota Camry - $50/day</option>
+          <option value="Ford Mustang">Ford Mustang - $80/day</option>
+          <option value="Jeep Wrangler">Jeep Wrangler - $90/day</option>
+          <option value="BMW X5">BMW X5 - $120/day</option>
+          <option value="Tesla Model 3">Tesla Model 3 - $100/day</option>
+          <option value="Audi 8">Audi 8 - $150/day</option>
+          <option value="Maruti Suzuki Swift">Maruti Suzuki Swift - $30/day</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="date">Pick-up Date</label>
+        <input type="date" id="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="days">Number of Days</label>
+        <input type="number" id="days" min="1" required>
+      </div>
+
+      <button type="submit">Reserve Now</button>
+    </form>
+  </div>
+  <div class="contact-container">
+    <h2>Contact Us</h2>
+
+    <div class="contact-details">
+      <div class="contact-item">
+        <h3>Phone</h3>
+        <p>+918607060701</p>
+        <p>+917414096812</p>
+      </div>
+
+      <div class="contact-item">
+        <h3>Email</h3>
+        <p>nvnyadav0308@gmail.com</p>
+        <p>maharxil@gmail.com</p>
+      </div>
+
+      <div class="contact-item">
+        <h3>Address</h3>
+        <p>Near lovely professional university </p>
+        <p>phagwara(jalandhar)</p>
+      </div>
+    </div>
+  <footer>
+    <p>&copy; 2024 Car Rental Service. All Rights Reserved.</p>
+  </footer>
+
+</body>
+</html>
